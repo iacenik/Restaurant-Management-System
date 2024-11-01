@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Entities.Masalar
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Masa Kayıt</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form method="post" action="Create">
+        <div class="card-body">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Masa Adı </label>
+                <input type="text" asp-for="@Model.Masa_Ad" class="form-control" id="exampleInputEmail1" placeholder="Masa Adını Giriniz">
+                <span asp-validation-for="@Model.Masa_Ad" class="text-danger"></span>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" asp-for="@Model.Masa_Durum"class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Masa Durumu</label>
+            </div>
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+    </form>
+</div>
+

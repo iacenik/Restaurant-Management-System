@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>Delete</h1>
+@model EntityLayer.Entities.Masalar
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Masa Güncelle</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form method="post" action="Create">
+        <div class="card-body">
+            <input type="hidden" asp-for="@Model.Masa_Id" />
+            <div class="form-group">
+                <label for="exampleInputEmail1">Masa Adı </label>
+                <input type="text"  disabled asp-for="@Model.Masa_Ad" class="form-control" id="exampleInputEmail1" placeholder="Masa Adını Giriniz">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" disabled asp-for="@Model.Masa_Durum" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Masa Durumu</label>
+            </div>
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Silme</button>
+            <a class="btn btn-secondary" asp-action="Index" asp-controller="Masalar">İptal</a>
+        </div>
+    </form>
+</div>
+
+

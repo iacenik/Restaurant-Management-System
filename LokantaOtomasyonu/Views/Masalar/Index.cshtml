@@ -1,0 +1,49 @@
+﻿@model List<EntityLayer.Entities.Masalar>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Masa Listesi</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <a asp-action="Create" asp-controller="Masalar" class="btn btn-primary">Yeni</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Masa Adı</th>
+                    <th>Masa Durumu</th>
+                    <th style="width: 40px">Düzelt</th>
+                    <th style="width: 40px">Silme</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int i = 1;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@i.</td>
+                        <td>@item.Masa_Ad</td>
+                        <td>
+                            @item.Masa_Durum
+                        </td>
+                        <td><a  class="btn btn-success" asp-action="Edit" asp-controller="Masalar" asp-route-Id="@item.Masa_Id">Düzelt</a></td>
+                        <td><a class="btn btn-danger" asp-action="Delete" asp-controller="Masalar" asp-route-Id="@item.Masa_Id">Sil</a></td>
+                    </tr>
+
+                    i++;
+                }
+                
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
