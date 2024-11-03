@@ -3568,10 +3568,25 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "BusinessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.35",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.35"
+        },
+        "compile": {
+          "bin/placeholder/BusinessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
       "DataAccessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "BusinessLayer": "1.0.0",
           "EntityLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.35",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.35"
@@ -10202,6 +10217,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "BusinessLayer/1.0.0": {
+      "type": "project",
+      "path": "../BusinessLayer/BusinessLayer.csproj",
+      "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
     },
     "DataAccessLayer/1.0.0": {
       "type": "project",
